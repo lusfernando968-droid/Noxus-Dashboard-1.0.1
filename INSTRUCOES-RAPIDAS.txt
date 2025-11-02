@@ -1,0 +1,62 @@
+===============================================
+    APPLE ZEN CRM - DEPLOY RAPIDO
+===============================================
+
+OPCAO 1 - SCRIPT AUTOMATICO:
+-----------------------------
+1. Abra PowerShell nesta pasta
+2. Execute: .\setup-simple.ps1
+3. Siga as instrucoes na tela
+
+OPCAO 2 - MANUAL:
+-----------------
+1. Inicializar Git:
+   git init
+   git add .
+   git commit -m "Initial commit: Apple Zen CRM"
+
+2. Criar repositorio no GitHub:
+   - Acesse: https://github.com/new
+   - Nome: apple-zen-crm
+   - Publico: SIM
+   - README: NAO inicializar
+
+3. Conectar ao GitHub:
+   git remote add origin https://github.com/SEU-USUARIO/apple-zen-crm.git
+   git branch -M main
+   git push -u origin main
+
+4. Deploy no Lovable:
+   - Acesse: https://lovable.dev
+   - New Project > Import from GitHub
+   - Selecione: apple-zen-crm
+   - Configure variaveis de ambiente:
+     * VITE_SUPABASE_URL=sua_url_supabase
+     * VITE_SUPABASE_ANON_KEY=sua_chave_anonima
+     * VITE_SUPABASE_PROJECT_ID=seu_project_id
+
+VARIAVEIS DE AMBIENTE:
+----------------------
+Copie do seu projeto Supabase:
+- Settings > API
+- Project URL
+- Project ID
+- Anon/Public Key
+
+PROBLEMAS COMUNS:
+-----------------
+- Git nao encontrado: Instale em https://git-scm.com
+- Erro de push: Verifique se o repositorio foi criado
+- Build falha: Verifique as variaveis de ambiente
+- Supabase erro: Execute as migracoes SQL
+
+ARQUIVOS IMPORTANTES:
+--------------------
+- README.md: Documentacao completa
+- DEPLOY.md: Guia detalhado de deploy
+- .env.example: Template de variaveis
+- supabase/migrations/: Scripts SQL
+
+===============================================
+    SUCESSO = APLICACAO RODANDO NO LOVABLE!
+===============================================
