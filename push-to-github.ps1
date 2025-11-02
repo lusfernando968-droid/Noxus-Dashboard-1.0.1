@@ -78,7 +78,7 @@ if (-not $RepoUrl -or [string]::IsNullOrWhiteSpace($RepoUrl)) {
     } catch {}
   }
   if (-not $RepoUrl -or [string]::IsNullOrWhiteSpace($RepoUrl)) {
-    $RepoUrl = "https://github.com/lusfernando968-droid/Noxus-Dashboard-vers-o-1.0.1-.git"
+    $RepoUrl = "https://github.com/lusfernando968-droid/Noxus-Dashboard-1.0.1.git"
   }
 }
 
@@ -165,9 +165,9 @@ try {
     }
     Write-Host "Tentando push com credenciais de .env (sem guardar no remote)..." -ForegroundColor Yellow
     if ($Force) {
-      & git push $repoAuth $Branch --force-with-lease
+      & git push -u $repoAuth $Branch --force-with-lease
     } else {
-      & git push $repoAuth $Branch
+      & git push -u $repoAuth $Branch
     }
     if ($LASTEXITCODE -ne 0) {
       throw "Falha ao executar push autenticado via URL. Verifique token e permissões."
